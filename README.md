@@ -1,3 +1,11 @@
-# Por favor faça um Fork desse projeto!
-
-## Está em dúvida de como fazer um Fork? Não tem problema! [Aqui tem uma explicação do que entendemos que você deve considerar!](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
+# Pojeto casa do codigo do Bootcamp  
+#### Tecnologias que foram sugeridas:  
+- Java 11  
+- Maven  
+- Spring-boot 
+  
+#### Dependencias adicionadas  
+* Spring web  
+* Spring data JPA  
+* Spring validation  
+* Mysql drivers  
