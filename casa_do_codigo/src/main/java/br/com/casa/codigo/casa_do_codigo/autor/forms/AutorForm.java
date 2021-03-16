@@ -1,14 +1,14 @@
 package br.com.casa.codigo.casa_do_codigo.autor.forms;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
+import br.com.casa.codigo.casa_do_codigo.autor.AutorRepository;
+import br.com.casa.codigo.casa_do_codigo.exceptions.ErroNoCadastroException;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Optional;
 
 public class AutorForm {
     @NotNull
@@ -37,5 +37,13 @@ public class AutorForm {
 
     public AutorModel toModel(){
         return new AutorModel(this.nome, this.descricao, this.email);
+    }
+
+    public boolean validarEmail(AutorRepository autorRepository) {
+        Optional<AutorModel> autor = autorRepository.findByEmail(this.email);
+
+        if(autor.isEmpty())
+            return true;
+        throw new ErroNoCadastroException("Email: "+this.email+" já está cadastrado");
     }
 }

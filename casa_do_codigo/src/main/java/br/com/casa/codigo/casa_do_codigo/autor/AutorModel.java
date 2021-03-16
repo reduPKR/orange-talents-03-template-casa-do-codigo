@@ -19,6 +19,7 @@ public class AutorModel {
     private String descricao;
     @NotNull
     @Email
+    @Column(unique = true)
     private String email;
     @NotNull
     private LocalDateTime instanteCriacao;
