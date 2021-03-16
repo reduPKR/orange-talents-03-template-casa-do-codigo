@@ -19,7 +19,7 @@ public class CategoriasController {
 
     @PostMapping
     public ResponseEntity<CategoriaDTO> cadastrar(@Valid @RequestBody CategoriaForm categoriaForm){
-        categoriaForm.validarNome(categoriaRepository);
+        //categoriaForm.validarNome(categoriaRepository);
         CategoriaModel categoria = categoriaForm.toModel();
         categoriaRepository.save(categoria);
 

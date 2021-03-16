@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import br.com.casa.codigo.casa_do_codigo.exceptions.ErroNoCadastroException;
 import org.springframework.util.Assert;
 
 public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Object> {
@@ -29,10 +30,12 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
         Query query = manager.createQuery("select 1 from "+klass.getName()+" where "+domainAttribute+"=:value");
         query.setParameter("value", value);
         List<?> list = query.getResultList();
-        Assert.isTrue(list.size() <=1, "Ja tem um "+klass+" com o mesmo valor no sistema");
+        Assert.isTrue(list.size() <=1, "Já existe "+klass+" cadastrado");
+
+        if(list.size() >=1)
+            throw new ErroNoCadastroException("Este "+domainAttribute+" já foi cadastrado no "+klass.getSimpleName(), domainAttribute+" duplicado");
+
         return list.isEmpty();
-
-
     }
 
 
