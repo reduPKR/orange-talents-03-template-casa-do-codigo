@@ -16,6 +16,6 @@ public class CategoriasController {
 
     @PostMapping
     public ResponseEntity<CategoriaDTO> cadastrar(){
-        
+        return ResponseEntity.ok().build();
     }
 }
