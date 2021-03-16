@@ -21,7 +21,6 @@ public class AutorController {
     @PostMapping
     @Transactional
     private ResponseEntity<AutorDTO> cadastrar(@Valid @RequestBody AutorForm autorForm){
-        autorForm.validarEmail(autorRepository);//pode gerar a exception
         AutorModel autor = autorForm.toModel();
         autorRepository.save(autor);
 

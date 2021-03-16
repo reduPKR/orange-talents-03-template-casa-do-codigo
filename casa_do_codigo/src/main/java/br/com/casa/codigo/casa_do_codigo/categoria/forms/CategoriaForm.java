@@ -23,13 +23,4 @@ public class CategoriaForm {
     public CategoriaModel toModel(){
         return new CategoriaModel(this.nome);
     }
-
-    public boolean validarNome(CategoriaRepository categoriaRepository) {
-        Optional<CategoriaModel> categoria = categoriaRepository.findByNome(this.nome);
-        System.out.println(categoria.get().getNome());
-
-        if(categoria.isEmpty())
-            return true;
-        throw new ErroNoCadastroException("Categoria com nome: "+this.nome+" já está cadastrado", "Nome da categoria duplicado");
-    }
 }
