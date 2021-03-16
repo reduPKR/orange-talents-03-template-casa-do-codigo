@@ -1,5 +1,6 @@
 package br.com.casa.codigo.casa_do_codigo.categoria;
 
+import br.com.casa.codigo.casa_do_codigo.categoria.forms.CategoriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+
 @RestController
 @RequestMapping("/categorias")
 public class CategoriasController {
@@ -16,7 +18,13 @@ public class CategoriasController {
     private CategoriaRepository categoriaRepository;
 
     @PostMapping
-    public ResponseEntity<CategoriaDTO> cadastrar(@Valid RequestBody CategoriaForm categoriaForm){
-        return ResponseEntity.ok().build();
+    public ResponseEntity<CategoriaDTO> cadastrar(@Valid @RequestBody CategoriaForm categoriaForm){
+        categoriaForm.validarNome(categoriaRepository);
+        CategoriaModel categoria = categoriaForm.toModel();
+        categoriaRepository.save(categoria);
+
+        if(categoria.getId() != 0)
+            return ResponseEntity.ok(new CategoriaDTO(categoria));
+        return ResponseEntity.badRequest().build();
     }
 }

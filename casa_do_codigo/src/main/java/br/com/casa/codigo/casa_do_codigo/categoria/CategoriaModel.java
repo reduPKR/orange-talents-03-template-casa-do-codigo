@@ -14,6 +14,7 @@ public class CategoriaModel {
     private String nome;
 
     public CategoriaModel(@NotNull String nome) {
+        this.id = 0;
         this.nome = nome;
     }
 
