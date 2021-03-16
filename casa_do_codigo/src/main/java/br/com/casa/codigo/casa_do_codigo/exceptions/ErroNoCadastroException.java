@@ -5,7 +5,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class ErroNoCadastroException extends RuntimeException{
-    public ErroNoCadastroException(String message) {
+    private String erro;
+    public ErroNoCadastroException(String message, String erro) {
         super(message);
+        this.erro = erro;
+    }
+
+    public String getErro() {
+        return erro;
     }
 }

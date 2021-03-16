@@ -13,6 +13,8 @@ public class CategoriaModel {
     @Column(unique = true)
     private String nome;
 
+    public CategoriaModel() {
+    }
     public CategoriaModel(@NotNull String nome) {
         this.id = 0;
         this.nome = nome;

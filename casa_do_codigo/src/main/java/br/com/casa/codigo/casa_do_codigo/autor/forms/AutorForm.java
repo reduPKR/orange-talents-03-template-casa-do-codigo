@@ -44,6 +44,6 @@ public class AutorForm {
 
         if(autor.isEmpty())
             return true;
-        throw new ErroNoCadastroException("Email: "+this.email+" já está cadastrado");
+        throw new ErroNoCadastroException("Email: "+this.email+" já está cadastrado", "Email duplicado");
     }
 }
