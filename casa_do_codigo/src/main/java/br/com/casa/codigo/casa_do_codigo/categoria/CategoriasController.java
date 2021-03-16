@@ -3,6 +3,7 @@ package br.com.casa.codigo.casa_do_codigo.categoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ public class CategoriasController {
     private CategoriaRepository categoriaRepository;
 
     @PostMapping
-    public ResponseEntity<CategoriaDTO> cadastrar(){
+    public ResponseEntity<CategoriaDTO> cadastrar(@Valid RequestBody CategoriaForm categoriaForm){
         return ResponseEntity.ok().build();
     }
 }

@@ -13,6 +13,10 @@ public class CategoriaModel {
     @Column(unique = true)
     private String nome;
 
+    public CategoriaModel(@NotNull String nome) {
+        this.nome = nome;
+    }
+
     public long getId() {
         return id;
     }
