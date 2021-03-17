@@ -75,4 +75,18 @@ public class LivroForm {
     public AutorModel getAutor() {
         return autor;
     }
+
+    public LivroModel toModel() {
+        return new LivroModel(
+            this.titulo,
+            this.resumo,
+            this.sumario,
+            this.preco,
+            this.numero_paginas,
+            this.isbn,
+            this.publicacao,
+            this.categoria,
+            this.autor
+        );
+    }
 }

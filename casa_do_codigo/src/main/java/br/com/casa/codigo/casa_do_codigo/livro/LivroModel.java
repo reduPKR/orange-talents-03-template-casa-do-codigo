@@ -41,6 +41,23 @@ public class LivroModel {
     @ManyToOne
     private AutorModel autor;
 
+    public LivroModel() {
+    }
+
+    public LivroModel(String titulo, String resumo, String sumario, double preco, int numero_paginas, String isbn, LocalDate publicacao, CategoriaModel categoria, AutorModel autor) {
+        this.id = 0;
+        this.titulo = titulo;
+        this.resumo = resumo;
+        this.sumario = sumario;
+        this.preco = preco;
+        this.numero_paginas = numero_paginas;
+        this.isbn = isbn;
+        this.publicacao = publicacao;
+        this.categoria = categoria;
+        this.autor = autor;
+
+    }
+
     public long getId() {
         return id;
     }
