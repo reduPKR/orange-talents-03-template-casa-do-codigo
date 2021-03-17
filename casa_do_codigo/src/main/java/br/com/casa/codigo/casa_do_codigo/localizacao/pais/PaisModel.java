@@ -12,7 +12,7 @@ public class PaisModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    @UniqueValue(domainClass = PaisModel.class, fieldName = "nome")
+    @Column(unique = true)
     private String nome;
 
     public long getId() {
