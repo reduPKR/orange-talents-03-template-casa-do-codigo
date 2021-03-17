@@ -26,7 +26,7 @@ public class LivroForm {
     @NotNull
     @NotEmpty
     @Min(100)
-    private int numero_paginas;
+    private int numeroPaginas;
     @NotNull
     @NotEmpty
     @UniqueValue(domainClass = LivroModel.class, fieldName = "isbn")
@@ -56,8 +56,8 @@ public class LivroForm {
         return preco;
     }
 
-    public int getNumero_paginas() {
-        return numero_paginas;
+    public int getNumeroPaginas() {
+        return numeroPaginas;
     }
 
     public String getIsbn() {
@@ -82,7 +82,7 @@ public class LivroForm {
             this.resumo,
             this.sumario,
             this.preco,
-            this.numero_paginas,
+            this.numeroPaginas,
             this.isbn,
             this.publicacao,
             this.categoria,

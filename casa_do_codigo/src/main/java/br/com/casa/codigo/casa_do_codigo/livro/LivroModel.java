@@ -28,7 +28,7 @@ public class LivroModel {
     private double preco;
     @NotNull
     @Min(100)
-    private int numero_paginas;
+    private int numeroPaginas;
     @NotNull
     @Column(unique = true)
     private String isbn;
@@ -44,13 +44,13 @@ public class LivroModel {
     public LivroModel() {
     }
 
-    public LivroModel(String titulo, String resumo, String sumario, double preco, int numero_paginas, String isbn, LocalDate publicacao, CategoriaModel categoria, AutorModel autor) {
+    public LivroModel(String titulo, String resumo, String sumario, double preco, int numeroPaginas, String isbn, LocalDate publicacao, CategoriaModel categoria, AutorModel autor) {
         this.id = 0;
         this.titulo = titulo;
         this.resumo = resumo;
         this.sumario = sumario;
         this.preco = preco;
-        this.numero_paginas = numero_paginas;
+        this.numeroPaginas = numeroPaginas;
         this.isbn = isbn;
         this.publicacao = publicacao;
         this.categoria = categoria;
@@ -78,8 +78,8 @@ public class LivroModel {
         return preco;
     }
 
-    public int getNumero_paginas() {
-        return numero_paginas;
+    public int getNumeroPaginas() {
+        return numeroPaginas;
     }
 
     public String getIsbn() {
