@@ -15,6 +15,14 @@ public class PaisModel {
     @Column(unique = true)
     private String nome;
 
+    public PaisModel() {
+    }
+
+    public PaisModel(String nome) {
+        this.id = 0;
+        this.nome = nome;
+    }
+
     public long getId() {
         return id;
     }

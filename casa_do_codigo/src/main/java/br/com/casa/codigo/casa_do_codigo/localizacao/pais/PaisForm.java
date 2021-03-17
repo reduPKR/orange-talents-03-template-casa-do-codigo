@@ -12,4 +12,8 @@ public class PaisForm {
     public String getNome() {
         return nome;
     }
+
+    public PaisModel converter() {
+        return new PaisModel(this.nome);
+    }
 }
