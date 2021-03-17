@@ -1,7 +1,8 @@
-package br.com.casa.codigo.casa_do_codigo.livro;
+package br.com.casa.codigo.casa_do_codigo.livro.dto;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
 import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaModel;
+import br.com.casa.codigo.casa_do_codigo.livro.LivroModel;
 import br.com.casa.codigo.casa_do_codigo.validador.UniqueValue;
 
 import javax.persistence.ManyToOne;

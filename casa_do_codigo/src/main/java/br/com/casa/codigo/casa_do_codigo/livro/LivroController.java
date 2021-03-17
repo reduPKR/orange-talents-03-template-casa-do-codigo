@@ -1,6 +1,6 @@
 package br.com.casa.codigo.casa_do_codigo.livro;
 
-import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaDTO;
+import br.com.casa.codigo.casa_do_codigo.livro.dto.LivroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
