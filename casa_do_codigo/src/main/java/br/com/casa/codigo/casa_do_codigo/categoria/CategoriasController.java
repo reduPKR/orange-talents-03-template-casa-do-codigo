@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 
@@ -18,6 +19,7 @@ public class CategoriasController {
     private CategoriaRepository categoriaRepository;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<CategoriaDTO> cadastrar(@Valid @RequestBody CategoriaForm categoriaForm){
         CategoriaModel categoria = categoriaForm.toModel();
         categoriaRepository.save(categoria);
