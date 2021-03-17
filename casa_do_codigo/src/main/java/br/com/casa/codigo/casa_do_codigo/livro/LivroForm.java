@@ -3,6 +3,7 @@ package br.com.casa.codigo.casa_do_codigo.livro;
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
 import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaModel;
 import br.com.casa.codigo.casa_do_codigo.validador.UniqueValue;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
@@ -28,6 +29,7 @@ public class LivroForm {
     @UniqueValue(domainClass = LivroModel.class, fieldName = "isbn")
     private String isbn;
     @Future
+    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate publicacao;
     @NotNull
     @ManyToOne
