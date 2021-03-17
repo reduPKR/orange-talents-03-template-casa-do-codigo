@@ -1,19 +1,28 @@
 package br.com.casa.codigo.casa_do_codigo.livro.dto;
 
-import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
-import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaModel;
+import br.com.casa.codigo.casa_do_codigo.livro.LivroModel;
 
-import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListaLivroDTO {
-    private String id;
+    private Long id;
     private String titulo;
 
-    public String getId() {
+    public ListaLivroDTO(LivroModel livroModel){
+        this.id = livroModel.getId();
+        this.titulo = livroModel.getTitulo();
+    }
+
+    public Long getId() {
         return id;
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public static List<ListaLivroDTO> converter(List<LivroModel> lista) {
+        return lista.stream().map(ListaLivroDTO::new).collect(Collectors.toList());
     }
 }
