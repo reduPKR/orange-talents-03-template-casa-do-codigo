@@ -30,4 +30,40 @@ public class LivroDTO {
         this.categoria = livro.getCategoria();
         this.autor = livro.getAutor();
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getPublicacao() {
+        return publicacao;
+    }
+
+    public CategoriaModel getCategoria() {
+        return categoria;
+    }
+
+    public AutorModel getAutor() {
+        return autor;
+    }
 }

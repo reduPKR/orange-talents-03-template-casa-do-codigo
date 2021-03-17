@@ -19,12 +19,8 @@ public class LivroForm {
     @Size(max = 500)
     private String resumo;
     private String sumario;
-    @NotNull
-    @NotEmpty
     @Min(value = 20)
     private double preco;
-    @NotNull
-    @NotEmpty
     @Min(100)
     private int numeroPaginas;
     @NotNull
