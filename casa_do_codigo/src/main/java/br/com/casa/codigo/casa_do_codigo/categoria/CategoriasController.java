@@ -1,6 +1,5 @@
 package br.com.casa.codigo.casa_do_codigo.categoria;
 
-import br.com.casa.codigo.casa_do_codigo.categoria.forms.CategoriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

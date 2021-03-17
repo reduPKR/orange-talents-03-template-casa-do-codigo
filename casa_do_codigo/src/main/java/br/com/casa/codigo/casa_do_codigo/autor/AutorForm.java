@@ -1,4 +1,4 @@
-package br.com.casa.codigo.casa_do_codigo.autor.forms;
+package br.com.casa.codigo.casa_do_codigo.autor;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
 import br.com.casa.codigo.casa_do_codigo.autor.AutorRepository;

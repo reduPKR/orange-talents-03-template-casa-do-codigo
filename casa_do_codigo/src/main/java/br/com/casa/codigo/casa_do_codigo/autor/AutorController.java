@@ -1,7 +1,5 @@
 package br.com.casa.codigo.casa_do_codigo.autor;
 
-import br.com.casa.codigo.casa_do_codigo.autor.forms.AutorForm;
-import br.com.casa.codigo.casa_do_codigo.exceptions.ErroNoCadastroException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

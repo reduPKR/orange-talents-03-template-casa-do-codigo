@@ -1,4 +1,4 @@
-package br.com.casa.codigo.casa_do_codigo.livros;
+package br.com.casa.codigo.casa_do_codigo.livro;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
 import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaModel;
