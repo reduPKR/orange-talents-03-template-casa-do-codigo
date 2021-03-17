@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "livros")
-public class LivrosModel {
+public class LivroModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
