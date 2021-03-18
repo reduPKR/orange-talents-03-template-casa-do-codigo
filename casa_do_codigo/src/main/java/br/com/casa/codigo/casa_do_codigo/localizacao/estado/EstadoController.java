@@ -4,10 +4,12 @@ import br.com.casa.codigo.casa_do_codigo.localizacao.pais.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/estados")
@@ -19,7 +21,7 @@ public class EstadoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<EstadoDTO> cadastrar(EstadoForm estadoForm){
+    public ResponseEntity<EstadoDTO> cadastrar(@Valid @RequestBody EstadoForm estadoForm){
         estadoForm.validar(estadoRepository, paisRepository);
         EstadoModel estado = estadoForm.converter();
         estadoRepository.save(estado);

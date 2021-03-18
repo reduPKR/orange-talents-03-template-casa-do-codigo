@@ -33,7 +33,7 @@ public class EstadoForm {
             throw new ErroNoCadastroException("País "+pais.getNome()+" não cadastro", "País não encontrado");
 
         Optional<EstadoModel> optionalEstado = estadoRepository.findEstadoPais(this.nome, this.pais.getId());
-        if(optionalEstado.isEmpty())
+        if(optionalEstado.isPresent())
             throw new ErroNoCadastroException("Estado "+this.nome+" já está cadastrado neste pais", "Estado já cadastrado");
 
         return true;

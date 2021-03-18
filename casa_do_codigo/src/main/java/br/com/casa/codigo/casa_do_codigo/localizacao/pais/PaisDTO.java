@@ -9,6 +9,7 @@ public class PaisDTO {
 
     public PaisDTO(PaisModel pais) {
         this.id = pais.getId();
+        this.nome = pais.getNome();
     }
 
     public long getId() {
