@@ -2,12 +2,9 @@ package br.com.casa.codigo.casa_do_codigo.cliente;
 
 import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoModel;
 import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoModel;
-import org.hibernate.validator.constraints.br.CNPJ;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.lang.annotation.Documented;
 
 @Entity
 @Table(name = "clientes")
@@ -21,8 +18,6 @@ public class ClienteModel {
     private String sobrenome;
     @NotNull
     @Column(unique = true)
-    @CPF(CpfGroup.class)
-    @CNPJ(CnpjGroup.class)
     private String documento;
     @OneToOne
     private ContatoModel contato;
