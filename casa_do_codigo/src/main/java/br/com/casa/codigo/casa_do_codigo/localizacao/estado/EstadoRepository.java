@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface EstadoRepository extends JpaRepository<EstadoModel, Long> {
-    @Query("select * from estados e where e.nome = :nome and e.pais_id = :id")
+    @Query(value = "select * from estados e where e.nome = :nome and e.pais_id = :id", nativeQuery = true)
     Optional<EstadoModel> findEstadoPais(String nome, long id);
 }
