@@ -1,6 +1,6 @@
 package br.com.casa.codigo.casa_do_codigo.localizacao.pais;
 
-import br.com.casa.codigo.casa_do_codigo.validador.UniqueValue;
+import br.com.casa.codigo.casa_do_codigo.validador.unique.UniqueValue;
 
 import javax.validation.constraints.NotNull;
 

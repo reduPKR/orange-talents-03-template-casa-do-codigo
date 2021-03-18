@@ -2,10 +2,9 @@ package br.com.casa.codigo.casa_do_codigo.livro;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorModel;
 import br.com.casa.codigo.casa_do_codigo.categoria.CategoriaModel;
-import br.com.casa.codigo.casa_do_codigo.validador.UniqueValue;
+import br.com.casa.codigo.casa_do_codigo.validador.unique.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.*;
 import java.time.LocalDate;

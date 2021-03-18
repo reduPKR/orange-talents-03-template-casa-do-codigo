@@ -1,4 +1,4 @@
-package br.com.casa.codigo.casa_do_codigo.validador;
+package br.com.casa.codigo.casa_do_codigo.validador.unique;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

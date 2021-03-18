@@ -1,7 +1,7 @@
 package br.com.casa.codigo.casa_do_codigo.localizacao.estado;
 
 import br.com.casa.codigo.casa_do_codigo.localizacao.pais.PaisModel;
-import br.com.casa.codigo.casa_do_codigo.validador.UniqueValue;
+import br.com.casa.codigo.casa_do_codigo.validador.unique.UniqueValue;
 
 import javax.validation.constraints.NotNull;
 
