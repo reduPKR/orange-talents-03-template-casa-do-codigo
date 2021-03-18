@@ -2,6 +2,7 @@ package br.com.casa.codigo.casa_do_codigo.cliente.contato;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "contatos")
@@ -10,9 +11,10 @@ public class ContatoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Email
+    @NotNull
     @Column(unique = true)
     private String email;
-    @Column(unique = true)
+    @NotNull
     private String telefone;
 
     public long getId() {
