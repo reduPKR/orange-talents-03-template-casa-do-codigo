@@ -16,6 +16,15 @@ public class EstadoModel {
     @ManyToOne
     private PaisModel pais;
 
+    public EstadoModel() {
+    }
+
+    public EstadoModel(String nome, PaisModel pais) {
+        this.id = 0;
+        this.nome = nome;
+        this.pais = pais;
+    }
+
     public long getId() {
         return id;
     }

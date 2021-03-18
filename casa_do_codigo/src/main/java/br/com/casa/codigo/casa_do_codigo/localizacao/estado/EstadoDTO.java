@@ -10,6 +10,12 @@ public class EstadoDTO {
     private String nome;
     private PaisModel pais;
 
+    public EstadoDTO(EstadoModel estado) {
+        this.id = estado.getId();
+        this.nome = estado.getNome();
+        this.pais = estado.getPais();
+    }
+
     public long getId() {
         return id;
     }
