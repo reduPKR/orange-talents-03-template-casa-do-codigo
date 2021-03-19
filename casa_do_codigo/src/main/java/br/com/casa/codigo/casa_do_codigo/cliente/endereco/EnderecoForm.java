@@ -35,4 +35,12 @@ public class EnderecoForm {
     public String getCep() {
         return cep;
     }
+
+    public EnderecoModel toModel() {
+        return new EnderecoModel(this.endereco,
+            this.complemento,
+            this.cidade,
+            this.estado,
+            this.cep);
+    }
 }

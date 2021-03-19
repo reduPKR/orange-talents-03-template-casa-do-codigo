@@ -59,4 +59,12 @@ public class ClienteForm {
     public EnderecoForm getEndereco() {
         return endereco;
     }
+
+    public ClienteModel toModel() {
+        return new ClienteModel(this.nome,
+                this.sobrenome,
+                this.documento,
+                this.contato.toModel(),
+                this.endereco.toModel());
+    }
 }

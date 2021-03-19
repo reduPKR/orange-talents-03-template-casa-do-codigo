@@ -17,6 +17,14 @@ public class ContatoModel {
     @NotNull
     private String telefone;
 
+    public ContatoModel() {
+    }
+
+    public ContatoModel(@Email @NotNull String email, @NotNull String telefone) {
+        this.email = email;
+        this.telefone = telefone;
+    }
+
     public long getId() {
         return id;
     }

@@ -21,4 +21,8 @@ public class ContatoForm {
     public String getTelefone() {
         return telefone;
     }
+
+    public ContatoModel toModel() {
+        return new ContatoModel(this.email, this.telefone);
+    }
 }

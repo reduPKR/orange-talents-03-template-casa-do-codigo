@@ -3,37 +3,25 @@ package br.com.casa.codigo.casa_do_codigo.cliente;
 import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoModel;
 import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoModel;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "clientes")
-public class ClienteModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ClienteDTO {
     private long id;
-    @NotNull
     private String nome;
-    @NotNull
     private String sobrenome;
-    @NotNull
-    @Column(unique = true)
     private String documento;
-    @OneToOne
     private ContatoModel contato;
-    @OneToOne
     private EnderecoModel endereco;
 
-    public ClienteModel() {
-    }
-
-    public ClienteModel(@NotNull String nome, @NotNull String sobrenome, @NotNull String documento, ContatoModel contato, EnderecoModel endereco) {
-        this.id = 0;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.documento = documento;
-        this.contato = contato;
-        this.endereco = endereco;
+    public ClienteDTO(ClienteModel cliente) {
+        this.id = cliente.getId();
+        this.nome = cliente.getNome();
+        this.sobrenome = cliente.getSobrenome();
+        this.documento = cliente.getDocumento();
+        this.contato = cliente.getContato();
+        this.endereco = cliente.getEndereco();
     }
 
     public long getId() {

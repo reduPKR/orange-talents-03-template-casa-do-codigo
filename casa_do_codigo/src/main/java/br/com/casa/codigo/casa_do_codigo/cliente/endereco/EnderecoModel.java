@@ -24,6 +24,17 @@ public class EnderecoModel {
     @NotNull
     private String cep;
 
+    public EnderecoModel() {
+    }
+
+    public EnderecoModel(@NotNull String endereco, @NotNull String complemento, @NotNull String cidade, @NotNull EstadoModel estado, @NotNull String cep) {
+        this.endereco = endereco;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+
     public long getId() {
         return id;
     }
