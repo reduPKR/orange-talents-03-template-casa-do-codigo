@@ -21,6 +21,7 @@ public class ContatoModel {
     }
 
     public ContatoModel(@Email @NotNull String email, @NotNull String telefone) {
+        this.id = 0;
         this.email = email;
         this.telefone = telefone;
     }

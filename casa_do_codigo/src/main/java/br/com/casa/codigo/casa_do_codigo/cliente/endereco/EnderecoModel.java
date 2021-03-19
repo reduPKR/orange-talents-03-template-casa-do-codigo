@@ -28,6 +28,7 @@ public class EnderecoModel {
     }
 
     public EnderecoModel(@NotNull String endereco, @NotNull String complemento, @NotNull String cidade, @NotNull EstadoModel estado, @NotNull String cep) {
+        this.id = 0;
         this.endereco = endereco;
         this.complemento = complemento;
         this.cidade = cidade;

@@ -1,6 +1,10 @@
 package br.com.casa.codigo.casa_do_codigo.cliente;
 
 import br.com.casa.codigo.casa_do_codigo.autor.AutorDTO;
+import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoModel;
+import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoRepository;
+import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoModel;
+import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -17,15 +21,28 @@ import javax.validation.Valid;
 public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
+    @Autowired
+    private ContatoRepository contatoRepository;
+    @Autowired
+    private EnderecoRepository enderecoRepository;
 
     @PostMapping
     @Transactional
     public ResponseEntity<ClienteDTO> cadastrar(@Valid @RequestBody ClienteForm clienteForm){
         ClienteModel cliente = clienteForm.toModel();
 
-        if(cliente.getId() != 0)
-            return ResponseEntity.ok(new ClienteDTO(cliente));
-        return ResponseEntity.badRequest().build();
+        contatoRepository.save(cliente.getContato());
+        if(cliente.getContato().getId() != 0){
 
+            enderecoRepository.save(cliente.getEndereco());
+            if(cliente.getEndereco().getId() != 0){
+
+                clienteRepository.save(cliente);
+                if(cliente.getId() != 0)
+                    return ResponseEntity.ok(new ClienteDTO(cliente));
+            }
+        }
+
+        return ResponseEntity.badRequest().build();
     }
 }
