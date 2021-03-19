@@ -19,7 +19,8 @@ public class EnderecoModel {
     @NotNull
     private String cidade;
     @NotNull
-    private EstadoModel estadoModel;
+    @ManyToOne
+    private EstadoModel estado;
     @NotNull
     private String cep;
 
@@ -39,8 +40,8 @@ public class EnderecoModel {
         return cidade;
     }
 
-    public EstadoModel getEstadoModel() {
-        return estadoModel;
+    public EstadoModel getEstado() {
+        return estado;
     }
 
     public String getCep() {

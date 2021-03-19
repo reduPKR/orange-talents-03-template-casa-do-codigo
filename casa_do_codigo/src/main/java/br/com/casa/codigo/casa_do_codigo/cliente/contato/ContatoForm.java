@@ -14,4 +14,11 @@ public class ContatoForm {
     @NotNull
     private String telefone;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
 }

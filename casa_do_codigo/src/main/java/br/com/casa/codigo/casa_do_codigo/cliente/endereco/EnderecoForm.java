@@ -12,7 +12,7 @@ public class EnderecoForm {
     @NotNull
     private String cidade;
     @NotNull
-    private EstadoModel estadoModel;
+    private EstadoModel estado;
     @NotNull
     private String cep;
 
@@ -28,8 +28,8 @@ public class EnderecoForm {
         return cidade;
     }
 
-    public EstadoModel getEstadoModel() {
-        return estadoModel;
+    public EstadoModel getEstado() {
+        return estado;
     }
 
     public String getCep() {

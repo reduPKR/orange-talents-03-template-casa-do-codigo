@@ -3,7 +3,9 @@ package br.com.casa.codigo.casa_do_codigo.cliente;
 import br.com.casa.codigo.casa_do_codigo.cliente.ClienteModel;
 import br.com.casa.codigo.casa_do_codigo.cliente.ClienteSequenceProvider;
 import br.com.casa.codigo.casa_do_codigo.cliente.TipoPessoa;
+import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoForm;
 import br.com.casa.codigo.casa_do_codigo.cliente.contato.ContatoModel;
+import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoForm;
 import br.com.casa.codigo.casa_do_codigo.cliente.endereco.EnderecoModel;
 import br.com.casa.codigo.casa_do_codigo.validador.cpfCnpj.CnpjGroup;
 import br.com.casa.codigo.casa_do_codigo.validador.cpfCnpj.CpfGroup;
@@ -21,17 +23,18 @@ public class ClienteForm {
     private String nome;
     @NotNull
     private String sobrenome;
+
+    private TipoPessoa tipo;//FISICA/JURICA
     @NotNull
     @UniqueValue(domainClass = ClienteModel.class, fieldName = "documento")
     @CPF(groups = CpfGroup.class)
     @CNPJ(groups = CnpjGroup.class)
     private String documento;
-    private TipoPessoa tipo;
 
     @OneToOne
-    private ContatoModel contato;
+    private ContatoForm contato;
     @OneToOne
-    private EnderecoModel endereco;
+    private EnderecoForm endereco;
 
     public String getNome() {
         return nome;
@@ -49,11 +52,11 @@ public class ClienteForm {
         return tipo;
     }
 
-    public ContatoModel getContato() {
+    public ContatoForm getContato() {
         return contato;
     }
 
-    public EnderecoModel getEndereco() {
+    public EnderecoForm getEndereco() {
         return endereco;
     }
 }
